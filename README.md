@@ -23,3 +23,6 @@ _________________________________
 Oracle Database of MySQL(?) 
 
 _________________________________
+
+# Database ERD
+![alt tag](https://github.com/JeroenEgelmeers/Sogeti_PetWebshop/blob/master/ERD_SogetiWebshop.png)
