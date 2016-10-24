@@ -4,27 +4,22 @@
 Hieronder een tekstuele schets van onze geplande te gebruiken technieken.
 Technieken met een (?) erachter, zijn nog een discussiepunt.
 
-////////////////////////////  
-// **Front-end technieken**
-//  
-// AngularJS  
-// HTML, CSS, SASS(?)  
-///////////////////////////  
+_________________________________
+
+**Front-end technieken**  
+AngularJS  
+HTML, CSS, SASS(?)  
+_________________________________
+
+**Backend technieken**   
+Java EE, Hibernate, JPA & EJB  
+_________________________________
   
-////////////////////////////  
-// **Backend technieken**  
-//  
-// Java EE, Hibernate, JPA & EJB  
-///////////////////////////  
-  
-////////////////////////////  
-// **Build tool(s)**  
-//  
-// Maven  
-///////////////////////////  
-  
-////////////////////////////  
-// **Database**  
-//  
-// Oracle Database of MySQL(?)  
-///////////////////////////  
+**Build tool(s)**   
+Maven, Gulp(?) 
+_________________________________
+
+**Database**  
+Oracle Database of MySQL(?) 
+
+_________________________________
