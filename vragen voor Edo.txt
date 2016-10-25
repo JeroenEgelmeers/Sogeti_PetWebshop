@@ -1,0 +1,2 @@
+Wat wordt de default valuta?
+gebruik maken van API om valuta's realtime te converteren of voor alle valuta's door admin invullen
