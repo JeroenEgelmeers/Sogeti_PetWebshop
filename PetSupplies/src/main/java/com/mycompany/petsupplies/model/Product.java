@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -29,19 +30,32 @@ public class Product implements Serializable {
     private double price_euro;
     private boolean active;
     
+    @OneToMany(mappedBy = "productCategory")
+    private Collection<Product_in_category> categories;
+    
     @ManyToMany(mappedBy = "products")
     private Collection<Product_in_order> productOrders;
 
     public Product() {
     }
 
-    public Product(Long id, String name, String description, double price_euro, boolean active, Collection<Product_in_order> productOrders) {
+    public Product(Long id, String name, String description, double price_euro, boolean active, Collection<Product_in_category> categories, Collection<Product_in_order> productOrders) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price_euro = price_euro;
         this.active = active;
+        this.categories = categories;
         this.productOrders = productOrders;
+    }
+
+
+    public Collection<Product_in_category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(Collection<Product_in_category> categories) {
+        this.categories = categories;
     }
 
     public Collection<Product_in_order> getProductOrders() {

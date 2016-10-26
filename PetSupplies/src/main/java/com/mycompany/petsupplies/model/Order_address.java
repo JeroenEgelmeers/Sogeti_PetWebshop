@@ -19,6 +19,13 @@ public class Order_address implements Serializable {
     @EmbeddedId
     private Order_addressPK order_addressPK;
 
+    public Order_address() {
+    }
+
+    public Order_address(Order_addressPK order_addressPK) {
+        this.order_addressPK = order_addressPK;
+    }
+
     public Order_addressPK getOrder_addressPK() {
         return order_addressPK;
     }

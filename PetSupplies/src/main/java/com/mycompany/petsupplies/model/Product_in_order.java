@@ -6,10 +6,8 @@
 package com.mycompany.petsupplies.model;
 
 import java.io.Serializable;
-import java.util.Collection;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 /**
@@ -22,14 +20,9 @@ public class Product_in_order implements Serializable {
     private static final long serialVersionUID = 1L;
     private int amount;
     private double price;
-
-    @Id
-    @ManyToOne
-    private ClientOrder clientOrder;
     
-    @Id
-    @ManyToMany
-    private Collection<Product> products;
+    @EmbeddedId
+    private Product_in_orderPK product_in_orderPK;
 
     @ManyToOne
     private Currency currency;
@@ -37,28 +30,19 @@ public class Product_in_order implements Serializable {
     public Product_in_order() {
     }
 
-    public Product_in_order(int amount, double price, ClientOrder clientOrder, Collection<Product> products, Currency currency) {
+    public Product_in_order(int amount, double price, Product_in_orderPK product_in_orderPK, Currency currency) {
         this.amount = amount;
         this.price = price;
-        this.clientOrder = clientOrder;
-        this.products = products;
+        this.product_in_orderPK = product_in_orderPK;
         this.currency = currency;
     }
 
-    public ClientOrder getOrder() {
-        return clientOrder;
+    public Product_in_orderPK getProduct_in_orderPK() {
+        return product_in_orderPK;
     }
 
-    public void setOrder(ClientOrder order) {
-        this.clientOrder = order;
-    }
-
-    public Collection<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(Collection<Product> products) {
-        this.products = products;
+    public void setProduct_in_orderPK(Product_in_orderPK product_in_orderPK) {
+        this.product_in_orderPK = product_in_orderPK;
     }
 
     public Currency getCurrency() {

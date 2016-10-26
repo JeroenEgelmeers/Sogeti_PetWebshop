@@ -14,6 +14,7 @@ public abstract class Product_ {
 	public static volatile SingularAttribute<Product, String> description;
 	public static volatile SingularAttribute<Product, Boolean> active;
 	public static volatile SingularAttribute<Product, Long> id;
+	public static volatile CollectionAttribute<Product, Product_in_category> categories;
 	public static volatile CollectionAttribute<Product, Product_in_order> productOrders;
 
 }
