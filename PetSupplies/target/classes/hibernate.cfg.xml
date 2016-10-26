@@ -13,8 +13,8 @@
 
          <!--Assume test is the database name--> 
         <property name="hibernate.connection.url">
-            jdbc:derby://localhost:1527/PetSupplies
-            <!--jdbc:mysql://localhost:3306/petsupplies-->
+            <!--jdbc:derby://localhost:1527/PetSupplies-->
+            jdbc:mysql://localhost:3306/petsupplies
         </property>
         <property name="hibernate.connection.username">
             root
