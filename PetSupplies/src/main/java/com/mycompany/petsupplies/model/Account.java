@@ -47,12 +47,12 @@ public class Account implements Serializable {
     private Language language;
     
     @OneToMany(mappedBy = "orderAccount")
-    private Collection<Order> orders;
+    private Collection<ClientOrder> orders;
 
     public Account() {
     }
 
-    public Account(Long id, String username, String password, String full_name, String address, String postal_code, String city, String email, boolean validated, Currency accountCurrency, Account_role accountRole, Language language, Collection<Order> orders) {
+    public Account(Long id, String username, String password, String full_name, String address, String postal_code, String city, String email, boolean validated, Currency accountCurrency, Account_role accountRole, Language language, Collection<ClientOrder> orders) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -68,11 +68,11 @@ public class Account implements Serializable {
         this.orders = orders;
     }
 
-    public Collection<Order> getOrders() {
+    public Collection<ClientOrder> getOrders() {
         return orders;
     }
 
-    public void setOrders(Collection<Order> orders) {
+    public void setOrders(Collection<ClientOrder> orders) {
         this.orders = orders;
     }
 

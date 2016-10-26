@@ -8,6 +8,7 @@ package com.mycompany.petsupplies.model;
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
@@ -22,9 +23,11 @@ public class Product_in_order implements Serializable {
     private int amount;
     private double price;
 
+    @Id
     @ManyToOne
-    private Order order;
+    private ClientOrder clientOrder;
     
+    @Id
     @ManyToMany
     private Collection<Product> products;
 
@@ -34,20 +37,20 @@ public class Product_in_order implements Serializable {
     public Product_in_order() {
     }
 
-    public Product_in_order(int amount, double price, Order order, Collection<Product> products, Currency currency) {
+    public Product_in_order(int amount, double price, ClientOrder clientOrder, Collection<Product> products, Currency currency) {
         this.amount = amount;
         this.price = price;
-        this.order = order;
+        this.clientOrder = clientOrder;
         this.products = products;
         this.currency = currency;
     }
 
-    public Order getOrder() {
-        return order;
+    public ClientOrder getOrder() {
+        return clientOrder;
     }
 
-    public void setOrder(Order order) {
-        this.order = order;
+    public void setOrder(ClientOrder order) {
+        this.clientOrder = order;
     }
 
     public Collection<Product> getProducts() {

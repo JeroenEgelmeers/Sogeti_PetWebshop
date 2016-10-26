@@ -19,7 +19,7 @@ import javax.persistence.OneToMany;
  * @author bhofsted
  */
 @Entity
-public class Order implements Serializable {
+public class ClientOrder implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -35,13 +35,13 @@ public class Order implements Serializable {
     @ManyToOne
     private Order_address order_address;
     
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "clientOrder")
     private Collection<Product_in_order> orderedProducts;
 
-    public Order() {
+    public ClientOrder() {
     }
 
-    public Order(Long id, Order_status orderStatus, Account orderAccount, Order_address order_address, Collection<Product_in_order> orderedProducts) {
+    public ClientOrder(Long id, Order_status orderStatus, Account orderAccount, Order_address order_address, Collection<Product_in_order> orderedProducts) {
         this.id = id;
         this.orderStatus = orderStatus;
         this.orderAccount = orderAccount;
@@ -98,14 +98,11 @@ public class Order implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Order)) {
+        if (!(object instanceof ClientOrder)) {
             return false;
         }
-        Order other = (Order) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
+        ClientOrder other = (ClientOrder) object;
+        return !((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)));
     }
 
     @Override

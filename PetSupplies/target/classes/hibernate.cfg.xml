@@ -11,9 +11,9 @@
             com.mysql.jdbc.Driver
         </property>
 
-        <!-- Assume test is the database name -->
+         <!--Assume test is the database name--> 
         <property name="hibernate.connection.url">
-            jdbc:derby://localhost:1527/PetSupplies
+            jdbc:mysql://localhost:3306/petsupplies
         </property>
         <property name="hibernate.connection.username">
             root
@@ -22,9 +22,7 @@
             root123
         </property>-->
 
-        <!-- List of XML mapping files -->
-        <mapping resource="Employee.hbm.xml"/>
-        
-
+         <!--List of XML mapping files--> 
+        <!--<mapping resource="Employee.hbm.xml"/>-->
     </session-factory>
 </hibernate-configuration>
