@@ -8,6 +8,12 @@ dist/
 nbdist/
 .nb-gradle/
 
+### NodeJS ###
+node_modules/
+
+### InteliJ ###
+.idea/
+
 
 ### Java ###
 *.class
