@@ -10,19 +10,20 @@ $primary-font-color: #1c1c1c;
 
 /* main CSS */
 body { font:$default-font; color:$primary-font-color; }
-
-$gold: #FFB900;
+$gold: #ff4019;
 $coral: #FC636B;
 $brightCoral: #FF6D92;
+
+.sLogo { height:40px; }
 
 #page {
   $opacity: 90%;
   align-items: center;
   background: linear-gradient(
                   to top right,
-                  mix($coral, white, $opacity) 10%,
-                  mix($brightCoral, white, $opacity) 65%,
-                  mix($gold, white, $opacity) 125%);
+                  mix($coral, white, $opacity) 0%,
+                  mix($brightCoral, white, $opacity) 0%,
+                  mix($gold, white, $opacity) 0%);
   bottom: 0;
   display: flex;
   justify-content: center;
@@ -37,7 +38,7 @@ $brightCoral: #FF6D92;
 #phrase_box {
   display: flex;
   flex-flow: column;
-  height: 150px;
+  height: 190px;
   overflow: hidden;
   width: 260px;
 }
