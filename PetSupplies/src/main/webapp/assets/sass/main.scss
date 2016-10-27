@@ -1,6 +1,9 @@
 /* SASS variable */
 $default-font: Helvetica, sans-serif;
 $primary-font-color: #1c1c1c;
+$gold: #ff4019;
+$coral: #FC636B;
+$brightCoral: #FF6D92;
 
 /* SASS Methodes */
 @mixin border-radius($radius) { -webkit-border-radius: $radius; -moz-border-radius:$radius; -ms-border-radius:$radius; border-radius:$radius; }
@@ -10,10 +13,6 @@ $primary-font-color: #1c1c1c;
 
 /* main CSS */
 body { font:$default-font; color:$primary-font-color; }
-$gold: #ff4019;
-$coral: #FC636B;
-$brightCoral: #FF6D92;
-
 .sLogo { height:40px; }
 
 #page {

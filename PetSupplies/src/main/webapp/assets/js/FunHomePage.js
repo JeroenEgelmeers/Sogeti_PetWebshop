@@ -77,7 +77,7 @@ function easeInOut(t) {
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
-    var phrases = shuffleArray(["\n", "Git", "GlassFish ", "MySQL ", "Maven ", "Gulp ", "Jave EE ", "Hibernate ", "JPA ", "EJB ", "JUnit", "HTML(5) ", "CSS3 ", "SASS ", "AngularJS "]);
+    var phrases = shuffleArray(["\n", "Git", "GlassFish ", "MySQL ", "Maven ", "NodeJS ", "Gulp ", "Jave EE ", "Hibernate ", "JPA ", "EJB ", "JUnit", "HTML(5) ", "CSS3 ", "SASS ", "AngularJS "]);
     addPhrasesToDocument(phrases);
     var start_time = new Date().getTime();
     var upward_moving_group = document.getElementById("phrases");
