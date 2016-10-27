@@ -26,7 +26,7 @@ public class Account implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(unique=true)
+    @Column(unique = true)
     private String username;
     private String password;
     private String full_name;
@@ -36,16 +36,16 @@ public class Account implements Serializable {
     @Column(unique = true)
     private String email;
     private boolean validated;
-    
+
     @ManyToOne
     private Currency accountCurrency;
-    
+
     @ManyToOne
     private Account_role accountRole;
-    
+
     @ManyToOne
     private Language language;
-    
+
     @OneToMany(mappedBy = "orderAccount")
     private Collection<ClientOrder> orders;
 
@@ -75,8 +75,6 @@ public class Account implements Serializable {
     public void setOrders(Collection<ClientOrder> orders) {
         this.orders = orders;
     }
-
- 
 
     public String getUsername() {
         return username;
@@ -165,8 +163,6 @@ public class Account implements Serializable {
     public void setLanguage(Language language) {
         this.language = language;
     }
-    
-    
 
     public Long getId() {
         return id;
@@ -200,5 +196,5 @@ public class Account implements Serializable {
     public String toString() {
         return "com.mycompany.petsupplies.model.Account[ id=" + id + " ]";
     }
-    
+
 }

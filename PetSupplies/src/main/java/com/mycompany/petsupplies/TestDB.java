@@ -18,7 +18,7 @@ public class TestDB {
 
     public static void main(String[] args) {
 
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("PetSupplies");
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("PetSuppliesDB");
         EntityManager manager = factory.createEntityManager();
         manager.getTransaction().begin();
         Product_category category1 = new Product_category(null, "For Doges");
