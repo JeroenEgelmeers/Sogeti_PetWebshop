@@ -75,7 +75,6 @@ function easeInOut(t) {
     var period = 200;
     return (Math.sin(t / period + 100) + 1) /2;
 }
-
 document.addEventListener("DOMContentLoaded", function(event) {
     var phrases = shuffleArray(["\n", "Git", "GlassFish ", "MySQL ", "Maven ", "NodeJS ", "Gulp ", "Jave EE ", "Hibernate ", "JPA ", "EJB ", "JUnit", "HTML(5) ", "CSS3 ", "SASS ", "AngularJS "]);
     addPhrasesToDocument(phrases);

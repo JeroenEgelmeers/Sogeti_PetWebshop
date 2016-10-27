@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Start Page</title>
+<html ng-app="webshopApp">
+    <head ng-controller="headerController">
+        <title>{{title}}</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="assets/css/main.css">
         <script src="assets/js/FunHomePage.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="assets/js/app.js"></script>
     </head>
     <body>
+        <div menu-directive></div>
         <div id="page">
             <div id="phrase_box">
                 <div><img src="https://www.sogeti.nl/sites/all/themes/sogeti/logo-screen.png" class="sLogo" /></div>
@@ -27,9 +30,7 @@
                     </g>
                 </svg>
             </div>
-            <div id="footer">
-                <div id="logo"></div>PetSupplies
-            </div>
         </div>
+        <div footer-directive></div>
     </body>
 </html>

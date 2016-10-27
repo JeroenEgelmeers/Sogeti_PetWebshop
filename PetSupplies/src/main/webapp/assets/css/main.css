@@ -30,7 +30,7 @@ body {
   flex-flow: column;
   height: 190px;
   overflow: hidden;
-  width: 260px; }
+  width: 180px; }
 
 #phrases {
   animation: slide-phrases-upward 20s; }
