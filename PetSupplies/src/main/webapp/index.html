@@ -1,36 +1,19 @@
 <!DOCTYPE html>
 <html ng-app="webshopApp">
-    <head ng-controller="headerController">
-        <title>{{title}}</title>
+    <head ng-controller="mainController">
+        <title>{{pageTitle}}</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="assets/css/main.css">
-        <script src="assets/js/FunHomePage.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
         <script src="assets/js/app.js"></script>
     </head>
     <body>
-        <div menu-directive></div>
-        <div id="page">
-            <div id="phrase_box">
-                <div><img src="https://www.sogeti.nl/sites/all/themes/sogeti/logo-screen.png" class="sLogo" /></div>
-                <svg width="100%" height="100%">
-                    <defs>
-                        <mask id="mask" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse">
-                            <linearGradient id="linearGradient" gradientUnits="objectBoundingBox" x2="0" y2="1">
-                                <stop stop-color="white" stop-opacity="0" offset="0%"/>
-                                <stop stop-color="white" stop-opacity="1" offset="30%"/>
-                                <stop stop-color="white" stop-opacity="1" offset="70%"/>
-                                <stop stop-color="white" stop-opacity="0" offset="100%"/>
-                            </linearGradient>
-                            <rect width="100%" height="100%" fill="url(#linearGradient)"/>
-                        </mask>
-                    </defs>
-                    <g width="100%" height="100%" style="mask: url(#mask);">
-                        <g id="phrases"></g>
-                    </g>
-                </svg>
-            </div>
+        <div class="page-wrap">
+            <div header-top-directive></div>
+            <div header-slider-directive></div>
+            <div header-garantees-directive></div>
+            <div content-directive></div>
         </div>
-        <div footer-directive></div>
+        <div class="site-footer" footer-directive></div>
     </body>
 </html>
