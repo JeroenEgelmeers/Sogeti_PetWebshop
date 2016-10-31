@@ -1,38 +1,33 @@
 /**
  * Created by jegelmee on 27-10-2016.
  */
+var webshopApp = angular.module('webshopApp',  ["ngRoute"]);
 
-var webshopApp = angular.module('webshopApp', []);
-
-// Add controllers
+// Controllers
 webshopApp
-    .controller('mainController', ['$scope', function($scope) {
+    .controller('MainController', ['$scope', '$location', function($scope, $location) {
         $scope.pageTitle = "PetSupplies";
+        $scope.pageDescription = "Alle benodigheden rondom uw huisdier.";
+        $scope.location = $location;
     }])
     .controller('cartController', ['$scope', function($scope) {
         $scope.items = [{name: "Food1"}, {name:"Food2"}];
-    }])
-    .directive("headerTopDirective", function() {
-        return {
-            scope: {},
-            templateUrl: 'directives/header/top.html',
-        };
-    })
+    }]);
+
+// Directives
+webshopApp
     .directive("headerSliderDirective", function() {
         return {
             scope: {},
+            link: function(scope) {
+                scope.title = "Verras uw huisdier!";
+            },
             templateUrl: 'directives/header/slider.html',
         };
     })
     .directive("headerGaranteesDirective", function() {
         return {
             scope: {},
-        };
-    })
-    .directive("contentDirective", function() {
-        return {
-            scope: {},
-            templateUrl: 'directives/pages/home.html',
         };
     })
     .directive("cartIconDirective", function() {
@@ -46,12 +41,4 @@ webshopApp
             scope: {},
             templateUrl: 'directives/products/product_box.html',
         };
-    })
-    .directive("footerDirective", function() {
-        return {
-            link: function(scope) { scope.companyName = "PetSupplies" },
-            scope: {},
-            templateUrl: 'directives/footer/footer.html',
-        };
-    })
-;
+    });
