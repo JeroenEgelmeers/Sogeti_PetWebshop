@@ -10,18 +10,15 @@ angular.module('webshopApp')
             })
             .when("/home", {
                 templateUrl : "pages/home.html",
-                controller: "MainController",
             })
             .when("/assortiment", {
                 templateUrl : "pages/assortiment.html",
-                controller: "MainController",
             })
             .when("/contact", {
                 templateUrl : "pages/contact.html",
-                controller: "MainController",
             })
             .when("/cart", {
                 templateUrl : "pages/cart.html",
-                controller: "MainController",
+                //controller: "MainController",
             });
     });

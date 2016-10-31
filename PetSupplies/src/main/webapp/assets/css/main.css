@@ -11,7 +11,7 @@
 html, body {
   height: 100%;
   font-family: "Montserrat", sans-serif;
-  color: #c1c1c1;
+  color: #444444;
   font-size: 12px; }
 
 h1 {
@@ -26,6 +26,9 @@ h1, h2 {
   margin-bottom: 5px;
   text-align: center;
   color: #444444; }
+
+a {
+  color: #bf0000; }
 
 .container {
   max-width: 1135px;
@@ -162,6 +165,9 @@ h1, h2 {
 .text-left {
   text-align: left; }
 
+.text-center {
+  text-align: center; }
+
 .text-right {
   text-align: right; }
 
@@ -181,7 +187,8 @@ h1, h2 {
 .site-footer {
   background: #232323; }
   .site-footer #footer {
-    padding: 40px 0; }
+    padding: 40px 0;
+    color: #c1c1c1; }
     .site-footer #footer a {
       color: #FFF; }
 

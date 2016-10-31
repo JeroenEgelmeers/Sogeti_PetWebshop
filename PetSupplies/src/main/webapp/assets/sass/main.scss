@@ -3,7 +3,8 @@
 
 /* SASS variable */
 $default-font: 'Montserrat', sans-serif;
-$primary-font-color: #c1c1c1;
+$primary-font-color: #444444;
+$primaryButtonColor: #bf0000;
 
 /* SASS Methodes */
 @mixin border-radius($radius) { -webkit-border-radius: $radius; -moz-border-radius:$radius; -ms-border-radius:$radius; border-radius:$radius; }
@@ -18,6 +19,8 @@ h1 { text-transform:uppercase; }
 h2 { }
 h3 { font-size:16px; margin-bottom:10px; color:#FFF; }
 h1, h2 { margin-bottom:5px; text-align:center; color:#444444; }
+
+a { color:$primaryButtonColor; }
 
 .container { max-width: 1135px; margin-right: auto; margin-left: auto; padding:0 10px;
   .grid { margin-bottom:20px;
@@ -61,6 +64,7 @@ h1, h2 { margin-bottom:5px; text-align:center; color:#444444; }
 
 /* other classes */
 .text-left { text-align:left; }
+.text-center { text-align:center; }
 .text-right { text-align:right; }
 
 /* Sticky footer page wrap */
@@ -72,6 +76,7 @@ h1, h2 { margin-bottom:5px; text-align:center; color:#444444; }
 .site-footer { background:#232323;
   #footer { padding:40px 0;
     a { color: #FFF; }
+    color:#c1c1c1;
   }
 }
 
