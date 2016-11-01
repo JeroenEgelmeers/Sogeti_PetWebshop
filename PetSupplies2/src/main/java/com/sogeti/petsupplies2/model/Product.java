@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.petsupplies.model;
+package com.sogeti.petsupplies2.model;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 /**
  *
@@ -20,15 +22,15 @@ public class Product implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String description;
     private double price_euro;
     private boolean active;
     
-//    @OneToMany(mappedBy = "productCategory")
-//    private Collection<Product_in_category> categories;
+//    @ManyToMany(mappedBy = "productCategories")
+//    private Collection<Product_category> categories;
 //    
 //    @ManyToMany(mappedBy = "products")
 //    private Collection<Product_in_order> productOrders;
@@ -98,15 +100,11 @@ public class Product implements Serializable {
             return false;
         }
         Product other = (Product) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
+        return !((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)));
     }
 
     @Override
     public String toString() {
         return "com.mycompany.petsupplies.model.Product[ id=" + id + " ]";
     }
-
 }

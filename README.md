@@ -6,6 +6,11 @@ Technieken met een (?) erachter, zijn nog een discussiepunt.
 
 _________________________________
 
+**Application Server**
+Wildfly10
+
+_________________________________
+
 **Front-end technieken**  
 AngularJS  
 HTML, CSS, SASS(?)  
@@ -24,7 +29,7 @@ JUnit
 _________________________________
 
 **Database**  
-Oracle Database of MySQL(?) 
+MySQL
 
 _________________________________
 

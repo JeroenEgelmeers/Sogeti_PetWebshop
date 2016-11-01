@@ -3,41 +3,46 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.petsupplies.model;
+package com.sogeti.petsupplies2.model;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 /**
  *
  * @author bhofsted
  */
 @Entity
-public class Account_role implements Serializable {
+public class Product_category implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String role;
-
-    public Account_role() {
+    private String title;
+    
+//    @ManyToMany
+//    private Collection<Product> productCategories;
+    
+    public Product_category() {
     }
 
-    public Account_role(Long id, String role) {
+    public Product_category(Long id, String title) {
         this.id = id;
-        this.role = role;
+        this.title = title;
     }
 
-    public String getRole() {
-        return role;
+    public String getTitle() {
+        return title;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public Long getId() {
@@ -58,10 +63,10 @@ public class Account_role implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Account_role)) {
+        if (!(object instanceof Product_category)) {
             return false;
         }
-        Account_role other = (Account_role) object;
+        Product_category other = (Product_category) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -70,7 +75,7 @@ public class Account_role implements Serializable {
 
     @Override
     public String toString() {
-        return "com.mycompany.petsupplies.model.Account_role[ id=" + id + " ]";
+        return "com.mycompany.petsupplies.model.Product_category[ id=" + id + " ]";
     }
     
 }
