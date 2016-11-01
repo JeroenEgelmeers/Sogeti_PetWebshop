@@ -5,13 +5,15 @@ var webshopApp = angular.module('webshopApp',  ["ngRoute"]);
 
 // Controllers
 webshopApp
-    .controller('MainController', ['$scope', '$location', function($scope, $location) {
-        $scope.pageTitle = "PetSupplies";
-        $scope.pageDescription = "Alle benodigheden rondom uw huisdier.";
-        $scope.location = $location;
+    .controller('MainController', ['$scope', '$location', function($scope) {
+        this.pageTitle = "PetSupplies";
+        this.pageDescription = "Alle benodigheden rondom uw huisdier.";
     }])
-    .controller('cartController', ['$scope', function($scope) {
-        $scope.items = [{name: "Food1"}, {name:"Food2"}];
+    .controller('MenuController', ['$scope', '$location', function($scope, $location) {
+        this.location = $location;
+    }])
+    .controller('CartController', ['$scope', function($scope) {
+        this.items = [{name: "Food1"}, {name:"Food2"}];
     }]);
 
 // Directives

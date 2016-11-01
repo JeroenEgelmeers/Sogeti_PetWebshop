@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html ng-app="webshopApp">
-    <head ng-controller="MainController">
-        <title>{{pageTitle}}</title>
-        <meta name="description" content="{{pageDescription}}">
+    <head ng-controller="MainController as mCtrl">
+        <title>{{mCtrl.pageTitle}}</title>
+        <meta name="description" content="{{mCtrl.pageDescription}}">
         <meta name="robots" content="index, follow">
         <meta name="revisit-after" content="30 days">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -19,10 +19,10 @@
                 <div class="container">
                     <a href="#home" class="logo"><img src="assets/images/header/logo.png" /></a>
                     <div class="cartInfo" cart-icon-directive></div>
-                    <ul class="menu" ng-controller="MainController">
-                        <li ng-class="{ active: location.path() == '/home' }"><a href="#home">Home</a></li>
-                        <li ng-class="{ active: location.path() == '/assortiment' }"><a href="#assortiment">Assortiment</a></li>
-                        <li ng-class="{ active: location.path() == '/contact' }"><a href="#contact">Contact</a></li>
+                    <ul class="menu" ng-controller="MenuController as menuCntrl">
+                        <li ng-class="{ active: menuCntrl.location.path() == '/home' }"><a href="#home">Home</a></li>
+                        <li ng-class="{ active: menuCntrl.location.path() == '/assortiment' }"><a href="#assortiment">Assortiment</a></li>
+                        <li ng-class="{ active: menuCntrl.location.path() == '/contact' }"><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
