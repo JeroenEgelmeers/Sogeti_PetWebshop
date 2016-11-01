@@ -1,0 +1,13 @@
+<div id="header">
+    <div class="container">
+        <a href="#home" class="logo"><img src="assets/images/header/logo.png" /></a>
+        <div class="cartInfo" cart-icon-directive></div>
+        <ul class="menu" ng-controller="MenuController as menuCntrl">
+            <li ng-class="{ active: menuCntrl.location.path() == '/home' }"><a href="#home">Home</a></li>
+            <li ng-class="{ active: menuCntrl.location.path() == '/assortiment' }"><a href="#assortiment">Assortiment</a></li>
+            <li ng-class="{ active: menuCntrl.location.path() == '/contact' }"><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</div>
+<div header-slider-directive></div>
+<div header-garantees-directive></div>
