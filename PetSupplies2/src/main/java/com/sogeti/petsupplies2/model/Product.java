@@ -7,51 +7,92 @@ package com.sogeti.petsupplies2.model;
 
 import java.io.Serializable;
 import java.util.Collection;
+import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
  * @author bhofsted
  */
 @Entity
+@Table(name = "product")
+@XmlRootElement
+@NamedQueries({
+    @NamedQuery(name = "Product.findAll", query = "SELECT p FROM Product p"),
+    @NamedQuery(name = "Product.findById", query = "SELECT p FROM Product p WHERE p.id = :id"),
+    @NamedQuery(name = "Product.findByActive", query = "SELECT p FROM Product p WHERE p.active = :active"),
+    @NamedQuery(name = "Product.findByDescription", query = "SELECT p FROM Product p WHERE p.description = :description"),
+    @NamedQuery(name = "Product.findByName", query = "SELECT p FROM Product p WHERE p.name = :name"),
+    @NamedQuery(name = "Product.findByPriceEuro", query = "SELECT p FROM Product p WHERE p.priceEuro = :priceEuro")})
 public class Product implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "id")
     private Long id;
-    private String name;
-    private String description;
-    private double price_euro;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "active")
     private boolean active;
-    
-//    @ManyToMany(mappedBy = "productCategories")
-//    private Collection<Product_category> categories;
-//    
-//    @ManyToMany(mappedBy = "products")
-//    private Collection<Product_in_order> productOrders;
+    @Size(max = 255)
+    @Column(name = "description")
+    private String description;
+    @Size(max = 255)
+    @Column(name = "name")
+    private String name;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "price_euro")
+    private double priceEuro;
+    @JoinTable(name = "product_category_product", joinColumns = {
+        @JoinColumn(name = "products_id", referencedColumnName = "id")}, inverseJoinColumns = {
+        @JoinColumn(name = "categories_id", referencedColumnName = "id")})
+    @ManyToMany
+    private Collection<ProductCategory> productCategoryCollection;
 
     public Product() {
     }
 
-    public Product(Long id, String name, String description, double price_euro, boolean active) {
+    public Product(Long id) {
         this.id = id;
-        this.name = name;
-        this.description = description;
-        this.price_euro = price_euro;
+    }
+
+    public Product(Long id, boolean active, double priceEuro) {
+        this.id = id;
         this.active = active;
+        this.priceEuro = priceEuro;
     }
 
-    public String getName() {
-        return name;
+    public Long getId() {
+        return id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public boolean getActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     public String getDescription() {
@@ -62,28 +103,29 @@ public class Product implements Serializable {
         this.description = description;
     }
 
-    public double getPrice_euro() {
-        return price_euro;
+    public String getName() {
+        return name;
     }
 
-    public void setPrice_euro(double price_euro) {
-        this.price_euro = price_euro;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public boolean isActive() {
-        return active;
+    public double getPriceEuro() {
+        return priceEuro;
     }
 
-    public void setActive(boolean active) {
-        this.active = active;
+    public void setPriceEuro(double priceEuro) {
+        this.priceEuro = priceEuro;
     }
 
-    public Long getId() {
-        return id;
+    @XmlTransient
+    public Collection<ProductCategory> getProductCategoryCollection() {
+        return productCategoryCollection;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setProductCategoryCollection(Collection<ProductCategory> productCategoryCollection) {
+        this.productCategoryCollection = productCategoryCollection;
     }
 
     @Override
@@ -100,11 +142,15 @@ public class Product implements Serializable {
             return false;
         }
         Product other = (Product) object;
-        return !((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)));
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+            return false;
+        }
+        return true;
     }
 
     @Override
     public String toString() {
-        return "com.mycompany.petsupplies.model.Product[ id=" + id + " ]";
+        return "com.sogeti.petsupplies.Product[ id=" + id + " ]";
     }
+    
 }

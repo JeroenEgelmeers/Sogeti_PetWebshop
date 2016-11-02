@@ -3,19 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package facades;
+package com.sogeti.petsupplies.service;
 
 import java.util.List;
 import javax.persistence.EntityManager;
 
 /**
  *
- * @author BHOFSTED
- * @param <T>
+ * @author bhofsted
  */
 public abstract class AbstractFacade<T> {
 
-    private final Class<T> entityClass;
+    private Class<T> entityClass;
 
     public AbstractFacade(Class<T> entityClass) {
         this.entityClass = entityClass;
