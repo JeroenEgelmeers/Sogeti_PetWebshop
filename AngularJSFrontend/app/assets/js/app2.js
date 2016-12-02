@@ -1,19 +1,9 @@
-'use strict';
+/**
+ * Created by jegelmee on 27-10-2016.
+ */
+var webshopApp = angular.module('webshopApp',  ["ngRoute"]);
 
-// Declare app level module which depends on views, and components
-var webshopApp = angular.module('myApp', [
-  'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
-]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
-
-  $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
-
-//controllers
+// Controllers
 webshopApp
     .controller('MainController', ['$scope', '$location', function($scope) {
         this.pageTitle = "PetSupplies";
@@ -26,7 +16,7 @@ webshopApp
         this.items = [{name: "Food1"}, {name:"Food2"}];
     }]);
 
-//directives
+// Directives
 webshopApp
     .directive("headerSliderDirective", function() {
         return {
@@ -48,10 +38,9 @@ webshopApp
             templateUrl: 'directives/cart/icon.html',
         };
     })
-//    .directive("productBoxDirective", function() {
-//        return {
-//            scope: {},
-//            templateUrl: 'directives/products/product_box.html',
-//        };
-//    })
-    ;
+    .directive("productBoxDirective", function() {
+        return {
+            scope: {},
+            templateUrl: 'directives/products/product_box.html',
+        };
+    });

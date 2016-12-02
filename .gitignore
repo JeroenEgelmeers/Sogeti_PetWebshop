@@ -19,6 +19,7 @@ node_modules/
 
 ### Java ###
 *.class
+*.json
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
