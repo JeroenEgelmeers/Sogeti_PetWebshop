@@ -4,7 +4,9 @@
 
 angular.module('webshopApp').directive("productBoxDirective", function() {
     return {
-        scope: {},
+        scope: {
+            productTitle: '@'
+        },
         templateUrl: 'directives/products/product_box.html',
     };
 });

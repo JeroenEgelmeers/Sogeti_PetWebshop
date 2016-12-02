@@ -4,10 +4,7 @@
 
 angular.module('webshopApp').directive("headerSliderDirective", function() {
     return {
-        scope: {},
-        link: function(scope) {
-            scope.title = "Verras uw huisdier!";
-        },
+        scope: { sliderTitle: '@' },
         templateUrl: 'directives/header/slider.html',
     };
 });
