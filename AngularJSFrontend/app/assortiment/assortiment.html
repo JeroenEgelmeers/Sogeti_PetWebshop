@@ -23,7 +23,7 @@
 <h1>Alleen het beste is goed genoeg!</h1>
 <p class="slogan">Bestel snel, gemakkelijk en laat het thuis bezorgen.</p>
 <div class="productContainer clearFix">
-    <a href="#" class="prod" ng-repeat="product in allProducts">
+    <a href="#" class="prod" ng-repeat="product in allProducts" ng-click="gotoProduct(product)">
         <div class="title">{{product.name}}</div>
     </a>
     <!--<div product-box-directive="allProducts" ng-repeat="product in allProducts"></div>-->

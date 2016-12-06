@@ -3,14 +3,17 @@
 // Declare app level module which depends on views, and components
 var webshopApp = angular.module('myApp', [
   'ngRoute',
-  'myApp.view1',
+  'myApp.assortiment',
   'myApp.view2',
-  'myApp.version'
+  'myApp.version',
+  'myApp.contact',
+  'myApp.home',
+  'myApp.cart'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
 
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.otherwise({redirectTo: '/assortiment'});
 }]);
 
 //controllers
