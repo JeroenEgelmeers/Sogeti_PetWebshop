@@ -1,8 +1,13 @@
 # Sogeti_PetWebshop
 
-# Architectuurplan
+## Architectuurplan
 Hieronder een tekstuele schets van onze geplande te gebruiken technieken.
 Technieken met een (?) erachter, zijn nog een discussiepunt.
+
+_________________________________
+
+**Application Server**
+Wildfly10
 
 _________________________________
 
@@ -18,15 +23,15 @@ _________________________________
 **Build tool(s)**   
 Maven, Gulp(?) 
 _________________________________
+  
+**Test tool(s)**  
+JUnit
+_________________________________
 
 **Database**  
-Oracle Database of MySQL(?) 
-_________________________________
-
-**Application Server**
-Glassfish
+MySQL
 
 _________________________________
 
-# Database ERD
+## Database ERD
 ![alt tag](https://github.com/JeroenEgelmeers/Sogeti_PetWebshop/blob/master/ERD_SogetiWebshop.png)

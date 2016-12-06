@@ -1,0 +1,39 @@
+<!--<table>
+    <thead>
+        <tr>
+            <th>
+                name
+            </th>
+            <th>
+                description
+            </th>
+            <th>
+                price
+            </th>
+        </tr>
+    </thead>
+    <tr ng-repeat="product in allProducts"
+        ng-click="showDetails(product)">
+        <td>{{product.name}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.priceEuro}}</td>
+    </tr>
+</table>-->
+
+<h1>Alleen het beste is goed genoeg!</h1>
+<p class="slogan">Bestel snel, gemakkelijk en laat het thuis bezorgen.</p>
+<div class="productContainer clearFix">
+    <a href="#!/product/{{product.id}}" class="prod" ng-repeat="product in allProducts">
+        <div class="title">{{product.name}}</div>
+    </a>
+    <!--<div product-box-directive="allProducts" ng-repeat="product in allProducts"></div>-->
+</div>
+
+
+<!--is shown on click
+<ul ng-if="selectedProduct != null">
+    <li>Name: {{selectedProduct.name}}</li>
+    <li ng-if="selectedProduct!==null">Description: {{selectedProduct.description}}</li>
+    <li>Price: {{selectedProduct.priceEuro}}</li>
+    <li>{{selectedCat.title}}</li>
+</ul>-->

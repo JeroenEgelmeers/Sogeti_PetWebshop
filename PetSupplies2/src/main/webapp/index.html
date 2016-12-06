@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="webshopApp">
+    <head ng-controller="MainController as mCtrl">
+        <title>{{mCtrl.pageTitle}}</title>
+        <meta name="description" content="{{mCtrl.pageDescription}}">
+        <meta name="robots" content="index, follow">
+        <meta name="revisit-after" content="30 days">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+        <script src="assets/js/app.js"></script>
+        <script src="assets/js/routeProvider.js"></script>
+        <link rel="stylesheet" href="assets/css/main.css">
+    </head>
+    <body>
+        <div class="page-wrap">
+            <div id="header">
+                <div class="container">
+                    <a href="#home" class="logo"><img src="assets/images/header/logo.png" /></a>
+                    <div class="cartInfo" cart-icon-directive></div>
+                    <ul class="menu" ng-controller="MenuController as menuCntrl">
+                        <li ng-class="{ active: menuCntrl.location.path() == '/home' }"><a href="#home">Home</a></li>
+                        <li ng-class="{ active: menuCntrl.location.path() == '/assortiment' }"><a href="#assortiment">Assortiment</a></li>
+                        <li ng-class="{ active: menuCntrl.location.path() == '/contact' }"><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div header-slider-directive></div>
+            <div header-garantees-directive></div>
+
+            <div class="container content">
+                <div ng-view></div>
+            </div>
+        </div>
+        <div class="site-footer">
+            <div id="footer">
+                <div class="container">
+                    <div class="grid">
+                        <div class="grid-2 text-left">
+                            <h3>Over PetSupplies</h3>
+                            <p>Lorum ipsum</p>
+                        </div>
+                        <div class="grid-2 text-right">
+                            <h3>Producten bestellen?</h3>
+                            <p>Deze website is nog in ontwikkeling. <br />Producten kunt u bestellen via: <a href="mailto:bestel@petsupplies.nl">bestel@petsupplies.nl</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
