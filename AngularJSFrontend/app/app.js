@@ -8,7 +8,8 @@ var webshopApp = angular.module('myApp', [
   'myApp.version',
   'myApp.contact',
   'myApp.home',
-  'myApp.cart'
+  'myApp.cart',
+  'myApp.product'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');

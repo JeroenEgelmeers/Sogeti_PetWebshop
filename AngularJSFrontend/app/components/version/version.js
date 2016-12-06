@@ -8,6 +8,17 @@ productService.factory('Products', function ($resource) {
     });
 });
 
+productService.factory('Product', function ($resource) {
+    return{
+        getProduct: function (id) {
+            return $resource('http://localhost:8080/PetSupplies2-1.0-SNAPSHOT/rs/products/:productno').get(
+                    {
+                        productno: id
+                    }
+            );
+        }
+    };
+});
 //productService.factory('Categories', function ($resource) {
 //    return{
 //        getCat: function (id) {

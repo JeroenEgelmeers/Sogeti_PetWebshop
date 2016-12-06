@@ -11,11 +11,8 @@ angular.module('myApp.assortiment', ['ngRoute'])
 
         .controller('AssortimentController', function ($scope, Products/*, Categories*/) {
             $scope.allProducts = Products.findAll();
-            $scope.showDetails = function (product) {
-                $scope.selectedProduct = product;
+//            $scope.gotoProduct = function (product) {
+//                $scope.selectedProduct = product;
 //        $scope.selectedCategory = Categories.getCat(product.catno);
-            }
-            $scope.gotoProduct = function(product){
-                $scope.selectedProduct = product;
-            }
+//            }
         });
