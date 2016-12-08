@@ -16,5 +16,6 @@ and open the template in the editor.
             <li>Description: {{product.description}}</li>
             <li>Price: {{product.priceEuro}}</li>
         </ul>
+        <a href="#!/cart"><button ng-controller="CartController" ng-click="addToCart(product)">Bestel</button></a>
     </body>
 </html>

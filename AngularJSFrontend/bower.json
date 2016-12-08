@@ -5,7 +5,7 @@
   "homepage": "https://github.com/angular/angular-seed",
   "license": "MIT",
   "private": true,
-  "dependencies": {
+  "dependencies": {"angular-cookies": "1.5.10-build.5161+sha.d7cc863",
     "angular": "~1.5.0",
     "angular-route": "~1.5.0",
     "angular-loader": "~1.5.0",

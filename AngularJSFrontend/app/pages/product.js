@@ -17,4 +17,7 @@ angular.module('myApp.product', ['ngRoute'])
             function ($scope, $routeParams, Product) {
                 var currentId = $routeParams.Id;
                 $scope.product = Product.getProduct(currentId);
+//                $scope.addToCart = function (product) {
+//                    $scope.$emit('addToCart', product);
+//                }
             }]);
