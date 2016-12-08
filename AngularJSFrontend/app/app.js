@@ -34,18 +34,19 @@ webshopApp
                 this.items = $scope.items2;
                 this.totalPrice = $scope.total;
                 $scope.addToCart = function (product) {
-//                    console.log(items);
                     items.push(product);
                     $scope.items2 = items;
                     totalPrice += product.priceEuro;
-                    console.log(totalPrice);
                     $scope.total = totalPrice;
-//                    this.totalPrice = $scope.total;
-                    console.log($scope.total);
-                }
+                };
 
-//                this.items = [{"id": 2, "active": false, "description": "Food for grumpy cats", "name": "Grumpy cat food", "priceEuro": 5.2},
-//                    {"id": 3, "active": true, "description": "Zaad van vogels", "name": "Vogelzaad", "priceEuro": 10}];
+                $scope.removeFromCart = function (product) {
+                    var index = items.indexOf(product);
+                    items.splice(index, 1);
+//                    console.log(totalPrice);
+                    totalPrice -= product.priceEuro;
+//                    console.log(totalPrice);
+                };
             }]);
 
 //directives
