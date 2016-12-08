@@ -19,6 +19,11 @@ productService.factory('Product', function ($resource) {
         }
     };
 });
+
+//productService.service('viewProduct', function(product) {
+//    this.product = product;
+//    return this.product;
+//});
 //productService.factory('Categories', function ($resource) {
 //    return{
 //        getCat: function (id) {

@@ -1,1 +1,33 @@
-Cart page
+<!DOCTYPE html>
+<html>
+    <head><title>Cart</title></head>
+    <body>
+        <h1>Cart page</h1>
+        <table ng-controller="CartController as cCtrl" border="2" style="cellpadding: 5px">
+            <thead>
+                <tr>
+                    <th>
+                        name
+                    </th>
+                    <th>
+                        price
+                    </th>
+                </tr>
+            </thead>
+            <tr ng-repeat="product in cCtrl.items">
+                <td>{{product.name}}</td>
+                <td> {{product.priceEuro}}</td>
+            </tr>
+            <tr bgcolor="grey">
+                <td>Total Price</td>
+                <td>{{cCtrl.totalPrice}}</td>
+            </tr>
+        </table>
+        <br />
+        <div class="productContainer clearFix" ng-controller="CartController as cCtrl">
+            <a href="#!/product/{{product.id}}" class="prod" ng-repeat="product in cCtrl.items">
+                <div class="title">{{product.name}}</div>
+            </a>
+        </div>
+    </body>
+</html>

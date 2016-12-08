@@ -7,8 +7,8 @@ angular.module('myApp.cart', ['ngRoute'])
     templateUrl: 'pages/cart.html',
     controller: 'CartController'
   });
-}])
-
-.controller('CartController', [function() {
-
 }]);
+
+//.controller('CartController', [function() {
+//
+//}]);
